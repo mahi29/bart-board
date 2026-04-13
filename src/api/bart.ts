@@ -1,5 +1,5 @@
 const BART_API_BASE = 'https://api.bart.gov/api/etd.aspx';
-const BART_API_KEY = 'MW9S-E7SL-26DU-VV8V';
+const BART_API_KEY = import.meta.env.VITE_BART_API_KEY;
 
 type BartEstimate = {
   minutes: string;
@@ -73,6 +73,10 @@ function formatDepartureTime(minutes: number): string {
 }
 
 async function fetchStationDepartures(config: StationConfig): Promise<Departure[]> {
+  if (!BART_API_KEY) {
+    throw new Error('Missing VITE_BART_API_KEY');
+  }
+
   const url = new URL(BART_API_BASE);
   url.searchParams.set('cmd', 'etd');
   url.searchParams.set('orig', config.stationCode);

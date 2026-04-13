@@ -6,10 +6,17 @@ Minimal personal commute dashboard built with React and Vite.
 
 ```bash
 npm install
+cp .env.example .env.local
 npm run dev
 ```
 
 Then open the local Vite URL shown in the terminal.
+
+Create `.env.local` with:
+
+```bash
+VITE_BART_API_KEY=your_bart_api_key_here
+```
 
 ## Notes
 
