@@ -15,8 +15,8 @@ const INITIAL_STATE: DashboardState = {
 };
 
 const STATIONS = [
-  { code: 'WDUB', label: 'West Dublin' },
-  { code: 'MONT', label: 'Montgomery St' }
+  { code: 'WDUB', label: 'West Dublin', accentClass: 'station-home' },
+  { code: 'MONT', label: 'Montgomery St', accentClass: 'station-work' }
 ] as const;
 
 function App() {
@@ -91,8 +91,11 @@ function App() {
       {error ? <p className="status error">{error}</p> : null}
 
       {STATIONS.map((station) => (
-        <section key={station.code} className="station-block">
-          <h2>{station.label}</h2>
+        <section key={station.code} className={`station-block ${station.accentClass}`}>
+          <h2 className="station-heading">
+            <span className="station-dot" aria-hidden="true" />
+            <span>{station.label}</span>
+          </h2>
           {loading && !data.departures[station.code] ? (
             <p className="status">Loading departures...</p>
           ) : (

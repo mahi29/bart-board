@@ -1,5 +1,5 @@
 const BART_API_BASE = 'https://api.bart.gov/api/etd.aspx';
-const BART_API_KEY = import.meta.env.VITE_BART_API_KEY;
+const BART_API_KEY = import.meta.env.VITE_BART_API_KEY?.trim();
 
 type BartEstimate = {
   minutes: string;

@@ -59,14 +59,52 @@ h2 {
 }
 
 .station-block {
-  margin-bottom: 12px;
+  margin-bottom: 20px;
+  padding: 10px 12px 12px;
+  border-left: 3px solid transparent;
+  background: rgba(10, 18, 34, 0.42);
 }
 
-.station-block h2 {
+.station-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 1rem;
   font-weight: 700;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
   letter-spacing: 0.02em;
+}
+
+.station-home {
+  border-left-color: #7dd3fc;
+}
+
+.station-work {
+  border-left-color: #f9a8d4;
+}
+
+.station-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: currentColor;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.04);
+}
+
+.station-home .station-heading {
+  color: #7dd3fc;
+}
+
+.station-home .station-heading span:last-child {
+  color: #f3f4f6;
+}
+
+.station-work .station-heading {
+  color: #f9a8d4;
+}
+
+.station-work .station-heading span:last-child {
+  color: #f3f4f6;
 }
 
 .departures {
