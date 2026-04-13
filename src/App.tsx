@@ -76,7 +76,7 @@ function App() {
         ) : data.weather ? (
           <>
             <p className="weather-line">
-              <span className="label">Weather:</span> {data.weather.temperature}° {data.weather.icon}{' '}
+              <span className="label">SF Weather:</span> {data.weather.temperature}° {data.weather.icon}{' '}
               {data.weather.description} <span className="muted">H:{data.weather.high} L:{data.weather.low}</span>
             </p>
             {typeof data.weather.rainChance === 'number' ? (

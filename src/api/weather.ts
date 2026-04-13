@@ -1,7 +1,7 @@
 const WEATHER_API_BASE = 'https://api.open-meteo.com/v1/forecast';
-const SAN_RAMON_CA_COORDINATES = {
-  latitude: 37.7799,
-  longitude: -121.978
+const SALESFORCE_TRANSIT_CENTER_COORDINATES = {
+  latitude: 37.7892,
+  longitude: -122.3961
 };
 
 export type WeatherSnapshot = {
@@ -53,8 +53,8 @@ function describeWeather(code: number): { description: string; icon: string } {
 
 export async function fetchWeather(): Promise<WeatherSnapshot> {
   const url = new URL(WEATHER_API_BASE);
-  url.searchParams.set('latitude', String(SAN_RAMON_CA_COORDINATES.latitude));
-  url.searchParams.set('longitude', String(SAN_RAMON_CA_COORDINATES.longitude));
+  url.searchParams.set('latitude', String(SALESFORCE_TRANSIT_CENTER_COORDINATES.latitude));
+  url.searchParams.set('longitude', String(SALESFORCE_TRANSIT_CENTER_COORDINATES.longitude));
   url.searchParams.set('current', 'temperature_2m,weather_code');
   url.searchParams.set('daily', 'temperature_2m_max,temperature_2m_min,precipitation_probability_max');
   url.searchParams.set('temperature_unit', 'fahrenheit');
